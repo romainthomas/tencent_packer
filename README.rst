@@ -80,3 +80,9 @@ Finally segments are uncompressed with deflate algorithm:
   inflateEnd(&stream);
 
 The newly decrypted and decompressed segments contain the real logic of the packer to decrypt and load the original DEX file.
+
+Especially, the original ``JNI_OnLoad`` is replaced with a new one located in the first segment decrypted:
+
+.. figure:: .github/screen2.png
+   :scale: 50 %
+   :alt: Tencent Step 2
