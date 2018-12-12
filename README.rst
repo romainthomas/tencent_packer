@@ -86,3 +86,9 @@ Especially, the original ``JNI_OnLoad`` is replaced with a new one located in th
 .. figure:: .github/screen2.png
    :scale: 50 %
    :alt: Tencent Step 2
+
+
+-------------
+
+This research was independently done while being at `Quarkslab <https://www.quarkslab.com/>`_
+
