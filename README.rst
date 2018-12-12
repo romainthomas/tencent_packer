@@ -1,7 +1,7 @@
 Tencent Packer Reader
 =====================
 
-This small utility can be used to read custom structures of ``libshell`` native library.
+This small utility can be used to read custom structures in overlay data of ``libshell{x,a}.so`` library.
 
 **IT DOES'T CONTAINS LOGIC TO UNPACK ORIGINAL DEX FILE**
 
