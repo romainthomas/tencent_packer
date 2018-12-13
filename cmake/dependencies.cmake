@@ -41,7 +41,7 @@ set(LIEF_CMAKE_ARGS
   -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
 )
 
-set(LIEF_VERSION      "b52f6ff4d37d6aa0e7555d1b02c3f9d9de25c5be")
+set(LIEF_VERSION      "f2b93bf796a11d39db573e29a28b75604ceccc2f")
 set(LIEF_GIT          "https://github.com/lief-project/LIEF.git")
 set(LIEF_PREFIX       "${CMAKE_CURRENT_BINARY_DIR}/LIEF")
 set(LIEF_INSTALL_DIR  "${LIEF_PREFIX}/install")
