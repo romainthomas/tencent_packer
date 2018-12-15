@@ -22,13 +22,19 @@ struct tencent_header_t {
   uint32_t dt_init;
   uint32_t dt_init_array;
   uint32_t unk6;
-  uint32_t unk7;
-  uint16_t unk8;
+  uint32_t DT_FINI_ARRAY;
+  uint16_t DT_FINI_ARRAYSZ;
   uint16_t nb_init_array;
   uint16_t nb_dt_needed;
   uint16_t unk10;
   uint32_t dt_needed_offset;
+  uint32_t sym_idx;
   uint32_t nb_symbols;
+  uint32_t hashtable_off;
+  uint32_t rel_plt_offset;
+  uint32_t rel_plt_count;
+  uint32_t rel_dyn_count;
+  uint32_t rel_dyn_offset;
 };
 
 struct packed_segment_t {
@@ -82,13 +88,18 @@ int main (int argc, char** argv) {
   console->info("{:<30s}: 0x{:06x}",     "DT_INIT",       theader->dt_init);
   console->info("{:<30s}: 0x{:06x}",     "DT_INIT_ARRAY", theader->dt_init_array);
   console->info("{:<30s}: 0x{:06x}",     "UNKNOWN[6]", theader->unk6);
-  console->info("{:<30s}: 0x{:06x}",     "UNKNOWN[7]", theader->unk7);
-  console->info("{:<30s}: 0x{:06x}",     "UNKNOWN[8]", theader->unk8);
+  console->info("{:<30s}: 0x{:06x}",     "DT_FINI_ARRAY", theader->DT_FINI_ARRAY);
+  console->info("{:<30s}: {:d}",         "DT_FINI_ARRAYSZ", theader->DT_FINI_ARRAYSZ);
   console->info("{:<30s}: {:d}",         "Number of ELF ctor", theader->nb_init_array);
   console->info("{:<30s}: {:d}",         "Number of Dependencies", theader->nb_dt_needed);
   console->info("{:<30s}: 0x{:06x}",     "UNKNOWN[10]", theader->unk10);
   console->info("{:<30s}: 0x{:06x}",     "DT_NEEDED", theader->dt_needed_offset);
   console->info("{:<30s}: {:d}",         "Number of Symbols", theader->nb_symbols);
+  console->info("{:<30s}: 0x{:06x}",     "Hash Table Offset", theader->hashtable_off);
+  console->info("{:<30s}: 0x{:06x}",     ".rel.plt offset", theader->rel_plt_offset);
+  console->info("{:<30s}: {:d}",         ".rel.plt count",  theader->rel_plt_count);
+  console->info("{:<30s}: 0x{:06x}",     ".rel.dyn offset", theader->rel_dyn_offset);
+  console->info("{:<30s}: {:d}",         ".rel.dyn count",  theader->rel_dyn_count);
 
 
   console->info("== Packed Segments ({}) ==", theader->nb_segments);
